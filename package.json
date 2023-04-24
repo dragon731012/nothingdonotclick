@@ -13,7 +13,8 @@
     "start": "node ."
   },
   "keywords": [
-    "proxy"
+    "proxy",
+    "DM unbl0cker"
   ],
   "author": "",
   "license": "GPL-3.0-or-later"

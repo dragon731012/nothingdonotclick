@@ -113,14 +113,10 @@
     
     title1.style.fontSize = fontsize1+"px";
     search.style.fontSize = fontsize2+"px";
-      
-    document.addEventListener("keypress", function onEvent(event) {
-        if (event.key === "Enter") {
-          var url=search.value;
     
-            function isUrl(val = ''){
-                if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
-                return false;
+    function isUrl(val = ''){
+        if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
+        return false;
             };
 
             form.addEventListener('submit', async event => {
@@ -134,6 +130,4 @@
                     window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
                 });
             });
-        }
-    });
 </script>

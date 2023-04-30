@@ -13,12 +13,112 @@
 </head>
 
 <body>
-    <form>
-        <input placeholder="Search the web freely">
+    <form class="searchbox" id="searchbox">
+        <input class="search" id="search" placeholder='Search Google or Type a URL'>
     </form>
+    <div class="icons">
+      <a href="https://github.com/dragon731012">
+        <img src="/img/github.png" class="github" id="github"/>
+      </a>
+      <a href="https://discord.gg/hrXXUeWgrn">
+        <img src="/img/discord.png" class="discord" id="discord"/>
+      </a>
+    </div>
+    <link rel="icon" href="/img/logo.png">
+<img src="/img/IMG_2996.gif" class="bg"/>
+<div class="title">
+  <h1 id="title1">DM Unblocker</h1>
+</div>
     <script src="uv/uv.bundle.js"></script>
     <script src="uv/uv.config.js"></script>
     <script src="index.js"></script>
 </body>
 
+<script>
+    var proxy=localStorage.getItem("proxy");
+if (proxy==undefined){
+  proxy="Corrosion";
+}
+var fontsize1=2560/screen.width*18;
+var fontsize2=2560/screen.width*6;
+
+title1.style.fontSize = fontsize1+"px";
+search.style.fontSize = fontsize2+"px";
+    </script>
+    
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+
+.bg{
+  top: 0%;
+  left: 0%;
+  position: absolute;
+  width:100%;
+  height:100%;
+}
+.searchbox{
+  width:80%;
+  height:6%;
+  color: #FFFFFF;
+  position: absolute;
+  left:10%;
+  top:45%;
+}
+.search{
+  text-align: center;
+  background: transparent;
+  border-radius: 25px;
+  border-radius: 25px;
+  border: 4px solid #FFFFFF;
+  color: #FFFFFF;
+  width:100%;
+  height:100%;
+}
+.title{
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  top:15%;
+  float: center;
+  align: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+::placeholder {
+  margin: auto;
+  color: #FFFFFF;
+  font-size: 1.2em;
+}
+.icons{
+  align: center;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  bottom: 0%;
+  left: 0%;
+}
+.github{
+  position: absolute;
+  height:100%;
+  width:70px;
+  height:70px;
+  left:0%;
+}
+.discord{
+  position: absolute;
+  height:100%;
+  width:70px;
+  height:70px;
+  left:70px;
+}
+.discord:hover{
+  opacity:0.5;
+}
+.github:hover{
+  opacity:0.5;
+}
+</style>
+    
 </html>

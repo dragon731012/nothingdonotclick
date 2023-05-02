@@ -2,6 +2,7 @@
 <script src="uv/uv.config.js"></script>
 
 <script>
+    function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
     function blank(){
       (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe); var script = win.document.createElement("script"); script.src = "https://3kh0.github.io/js/main.js"; win.document.body.appendChild(script); })();
     }
@@ -109,6 +110,7 @@
     }
 </style>
 <script>
+    var iconcookie=get_cookie("icon");
     var proxy=localStorage.getItem("proxy");
     if (proxy==undefined){
       proxy="Corrosion";
@@ -122,6 +124,18 @@
     const form = document.querySelector('form');
     const input = document.querySelector('input');
 
+    if (iconcookie=null){
+        iconcookie="/img/logo.png";
+    }
+    const favicon=document.querySelector('[rel=icon]');
+    (function() {
+        var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+        link.type='image/x-icon';
+        link.rel='shortcut icon';
+        link.href=url;
+        document.getElementsByTagName('head')[0].appendChild(link);
+    })();
+    
     form.addEventListener('submit', async event => {
         event.preventDefault();
         window.navigator.serviceWorker.register('./sw.js', {

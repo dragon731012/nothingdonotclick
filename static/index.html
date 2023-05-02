@@ -13,9 +13,7 @@
     <h1 id="title1">DM Unblocker</h1>
 </div>
 <div class="searchbox" id="searchbox">
-    <form>
-        <input class="search" id="search" placeholder='Search Google or Type a URL' type='text'/>
-    </form>
+    <input class="search" id="search" placeholder='Search Google or Type a URL' type='text'/>
 </div>
 <div class="icons">
     <a onclick="blank();">
@@ -109,7 +107,6 @@
     }
 </style>
 <script>
-    var iconcookie=get_cookie("icon");
     var proxy=localStorage.getItem("proxy");
     if (proxy==undefined){
       proxy="Corrosion";
@@ -123,18 +120,6 @@
     const form = document.querySelector('form');
     const input = document.querySelector('input');
 
-    if (iconcookie=null){
-        iconcookie="/img/logo.png";
-    }
-    const favicon=document.querySelector('[rel=icon]');
-    (function() {
-        var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
-        link.type='image/x-icon';
-        link.rel='shortcut icon';
-        link.href=url;
-        document.getElementsByTagName('head')[0].appendChild(link);
-    })();
-    
     form.addEventListener('submit', async event => {
         event.preventDefault();
         window.navigator.serviceWorker.register('./sw.js', {

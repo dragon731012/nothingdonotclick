@@ -13,11 +13,9 @@
 <div class="title">
     <h1 id="title1">DM Unblocker</h1>
 </div>
-<div class="searchbox" id="searchbox">
-    <form>
-        <input class="search" id="search" placeholder='Search Google or Type a URL' type='text'/>
-    </form>
-</div>
+<form class="searchbox" id="searchbox">
+    <input class="search" id="search" placeholder='Search Google or Type a URL' type='text'/>
+</form>
 <div class="icons">
     <a onclick="blank();">
     <img src="/img/IMG_3024.png" class="blank" id="blank"/>
@@ -120,10 +118,6 @@
     
     title1.style.fontSize = fontsize1+"px";
     search.style.fontSize = fontsize2+"px";
-    
-    const form = document.querySelector('form');
-    const input = document.querySelector('input');
-
     if (iconcookie=null){
         iconcookie="/img/logo.png";
     }
@@ -135,7 +129,11 @@
         link.href=url;
         document.getElementsByTagName('head')[0].appendChild(link);
     })();
-    
+</script>
+<script>
+    const form = document.querySelector('form');
+    const input = document.querySelector('input');
+
     form.addEventListener('submit', async event => {
         event.preventDefault();
         window.navigator.serviceWorker.register('./sw.js', {

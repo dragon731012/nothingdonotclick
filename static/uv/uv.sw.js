@@ -1,5 +1,5 @@
-importScripts('./uv/uv.bundle.js');
-importScripts('./uv/uv.config.js');
+importScripts('/uv/uv.bundle.js');
+importScripts('/uv/uv.config.js');
 
 class UVServiceWorker extends EventEmitter {     
     constructor(config = __uv$config) {
@@ -52,7 +52,7 @@ class UVServiceWorker extends EventEmitter {
         };
     };
     async fetch({ request }) {
-        if (!request.url.startsWith(location.origin + (this.config.prefix || '/service/'))) {
+        if (!request.url.startsWith(location.origin + (this.config.prefix || '/uvservice/'))) {
             return fetch(request);
         };
         try {
@@ -60,7 +60,7 @@ class UVServiceWorker extends EventEmitter {
             const ultraviolet = new Ultraviolet(this.config);
 
             if (typeof this.config.construct === 'function') {
-                this.config.construct(ultraviolet, 'service');
+                this.config.construct(ultraviolet, 'uvservice');
             };
 
             const db = await ultraviolet.cookie.db();
